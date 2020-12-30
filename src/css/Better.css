@@ -1,0 +1,392 @@
+/**
+ ** 针对搜索引擎缓存页面样式优化
+ */
+/* Bing Cache Page */
+.banner {
+  margin-top: 32px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Baidu Cache Page */
+#bd_snap{
+  margin-top: 64px;
+}
+
+/**
+ ** 设置页面高度
+ */
+body, html {
+  min-height: 100%;
+}
+
+/**
+ ** 顶栏背景色
+ */
+.mdui-theme-layout-auto .mdui-appbar>[class*=mdui-color-]:not(.mdui-color-transparent) {
+  /* 浅色 */
+  background-color: #fff!important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .mdui-theme-layout-auto .mdui-appbar>[class*=mdui-color-]:not(.mdui-color-transparent) {
+	/* 深色 */
+    background-color: #303030!important;
+  }
+}
+
+/**
+ ** 底边留白
+ */
+.better-save-white {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+/**
+ ** 搜索框
+ */
+.search {
+  /* 调整搜索图标的左右坐标 */
+  margin: 0 4px;
+}
+
+@media (min-width:600px) {
+  .search {
+    /* 调整搜索图标的左右坐标 */
+    margin: 0 8px;
+  }
+}
+
+.mdui-textfield-expandable button {
+  /* 对齐按钮 */
+  margin-top: 4px;
+}
+
+.mdui-textfield-expandable input {
+  /* 对齐输入框 */
+  margin-top: 3px;
+}
+
+.mdui-textfield-expandable.mdui-textfield-expanded {
+  /* 限制输入框大小 */
+  width: 300px;
+}
+
+/**
+ ** 顶部应用栏 & Better 标准居中流
+ */
+.titleBar {
+  /* 居中 */
+  margin-left: auto;
+  margin-right: auto;
+  /* 宽度限制 */
+  width: 100%;
+}
+
+.better-center-flow {
+  /* 居中 */
+  margin-left: auto;
+  margin-right: auto;
+  /* 宽度限制 */
+  width: 100%;
+}
+
+
+@media (min-width: 600px) {
+  .titleBar {
+    /* 居中 */
+    margin-left: auto;
+    margin-right: auto;
+    /* 宽度限制 */
+    width: 100%;
+  }
+
+  .better-center-flow {
+    /* 居中 */
+    margin-left: auto;
+    margin-right: auto;
+    /* 宽度限制 */
+    width: 100%;
+    max-width: 800px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .titleBar {
+    /* 居中 */
+    margin-left: auto;
+    margin-right: auto;
+    /* 宽度限制 */
+    width: 100%;
+    max-width: 1000px;
+  }
+
+  .better-center-flow {
+    /* 居中 */
+    margin-left: auto;
+    margin-right: auto;
+    /* 宽度限制 */
+    width: 100%;
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .titleBar {
+    /* 居中 */
+    margin-left: auto;
+    margin-right: auto;
+    /* 宽度限制 */
+    width: 100%;
+    max-width: 1140px;
+  }
+
+  .better-center-flow {
+    /* 居中 */
+    margin-left: auto;
+    margin-right: auto;
+    /* 宽度限制 */
+    width: 100%;
+    max-width: 1100px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .titleBar {
+    /* 居中 */
+    margin-left: auto;
+    margin-right: auto;
+    /* 宽度限制 */
+    width: 100%;
+    max-width: 1140px;
+  }
+
+  .better-center-flow {
+    /* 居中 */
+    margin-left: auto;
+    margin-right: auto;
+    /* 宽度限制 */
+    width: 100%;
+    max-width: 1140px;
+  }
+}
+
+/**
+ ** 卡片布局
+ */
+.postList {
+  margin-left: auto;
+  margin-right: auto;
+  /* 宽度限制 */
+  width: 100%;
+  max-width: 1000px;
+}
+
+.postCard {
+  /* 居中 */
+  margin-left: auto;
+  margin-right: auto;
+  /* 圆角化卡片 */
+  border-radius: 8px;
+  /* 宽度限制 */
+  width: 100%;
+}
+
+.postCard-img {
+  height: 210px;
+}
+
+.postCard-img img {
+  height: 210px;
+}
+
+.postCard-left {
+  height: 210px;
+}
+
+.widget {
+  max-height: 36px;
+  padding-top: 26px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.read-more {
+  position: relative;
+  top: -33px
+}
+
+.postTitle {
+  display: none;
+  padding-bottom: 0px !important;
+}
+
+.postTitle a {
+  height: 72px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.postContent {
+  padding-top: 16px !important;
+  height: 54px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.postActions {
+  height: 52px;
+}
+
+@media (min-width: 600px) {
+  .postCard-img {
+    height: 300px;
+  }
+
+  .postCard-img img {
+    height: 300px;
+  }
+
+  .postCard-left {
+    height: 300px;
+  }
+}
+
+@media (min-width: 810px) {
+  .postCard {
+    /* 宽度限制 */
+    max-width: 780px;
+  }
+
+  .postCard-left {
+    float:left;
+    width:429px;
+  }
+
+  .postCard-right {
+    float:right;
+    width:312px;
+  }
+
+
+/* 限制文章头图比例为16:9 */
+  .postCard-img {
+    width: 429px;
+    height: 300px;
+  }
+
+  .postCard-img img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .postTitle-Small {
+    display: none;
+  }
+
+  .postTitle {
+    display: block;
+  }
+
+  .postTitle-and-postContent {
+    height: 198px;
+  }
+}
+
+/**
+ ** 文档内边距
+ */
+.article-page {
+	padding: 20px;
+}
+
+/**
+ ** 友链 英文字体修正
+ */
+.link-Style {
+text-transform: none !important;
+}
+/**
+ ** 文章布局
+ */
+.post {
+  /* 居中 */
+  margin-left: auto;
+  margin-right: auto;
+  /* 宽度限制 */
+  width: 100%;
+  max-width: 700px;
+}
+
+/**
+ ** 页脚
+ **
+ ** 基于 EAimTY 开发的 materiality-typecho-theme 二改
+ */
+footer a {
+  color: inherit;
+  text-decoration: none
+}
+
+footer a:hover {
+  text-decoration: underline
+}
+
+@media (min-width: 1023.3px) {
+  footer {
+    height: 96px;
+    width: 100%
+  }
+
+  .footer-left {
+    height: inherit;
+    padding: 0 8px;
+    white-space: nowrap text-align:left;
+  }
+
+  .footer-center {
+    height: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap
+  }
+
+  .footer-right {
+    height: inherit;
+    font-size: 12.5px;
+    text-align: right;
+    line-height: 20px
+  }
+}
+
+@media (max-width: 1023.3px) {
+  footer {
+    width: 100%
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    width: 100%;
+    clear: both;
+    white-space: nowrap
+  }
+
+  .footer-left {
+    margin-top: 18px
+  }
+
+  .footer-center {
+    margin-top: 18px;
+    font-size: 14px;
+    font-weight: 700
+  }
+
+  .footer-right {
+    text-align: center;
+    margin: 18px auto 24px;
+    font-size: 12.5px;
+    line-height: 20px
+  }
+}
