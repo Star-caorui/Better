@@ -60,9 +60,8 @@
   crossorigin="anonymous"
   integrity="sha384-w8gmmdGHCqDJR/Bc+rE9AXKciU5qx2pqcVux6l4pSU26xoMsNz+Q3zoty8OFJG11"
 ></script>
-<script
-  src="<?php print_r(defaultStaticFiles('js/Better.js?').THEME_VERSION); ?>"
-></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="<?php print_r(defaultStaticFiles('js/Better.js?').THEME_VERSION); ?>"></script>
 
 <?php $this->footer(); ?>
 </body>

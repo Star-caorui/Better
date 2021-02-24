@@ -11,9 +11,6 @@ mdui.snackbar({
     timeout:'3000'
 });
 
-/* Enable HighLight */
-hljs.initHighlightingOnLoad();
-
 /* Site RunTime */
 function show_runtime(){
     window.setTimeout("show_runtime()",1000);
