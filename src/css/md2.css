@@ -1,0 +1,9 @@
+/**
+ ** 此段代码来自MDX（https://flyhigher.top/develop/788.html）
+ */
+.menu-item.mdui-list-item,
+.mdui-collapse-item-header.mdui-list-item,
+a.mdui-list-item {
+ border-radius:0 100px 100px 0;
+ margin-right:5px
+}

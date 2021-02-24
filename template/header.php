@@ -30,6 +30,12 @@
   <link
     rel="preload"
     crossorigin="anonymous"
+    href="<?php print_r(defaultStaticFiles('css/md2.css?'.THEME_VERSION)); ?>"
+    as="style"
+    integrity=""/>
+  <link
+    rel="preload"
+    crossorigin="anonymous"
     href="<?php print_r(defaultStaticFiles('css/Better.css?'.THEME_VERSION)); ?>"
     as="style"
     integrity=""/>
@@ -44,6 +50,11 @@
     crossorigin="anonymous"
     href="<?php print_r(defaultStaticFiles('css/github.min.css?'.HIGHLIGHT_VERSION)); ?>"
     integrity="sha384-5pflc8J4rhuPGHZTObXqqZez/ZtlqMfkkj5uI9ysuNQXJfhr6DOi53QfFXUAMAtA"/>
+  <link
+    rel="stylesheet"
+    crossorigin="anonymous"
+    href="<?php print_r(defaultStaticFiles('css/md2.css?'.THEME_VERSION)); ?>"
+    integrity=""/>
   <link
     rel="stylesheet"
     crossorigin="anonymous"
@@ -114,13 +125,12 @@
       </a>
     </div>
     <div class="mdui-divider"></div>
-    <a class="mdui-list-item mdui-ripple" <?php if ($this->is('index')): ?><?php endif; ?> href="<?php $this->options->siteUrl(); ?>">
+    <a class="mdui-list-item mdui-ripple<?php if ($this->is('index')): ?> mdui-list-item-active mdui-color-theme-a100<?php endif; ?>" href="<?php $this->options->siteUrl(); ?>">
       <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-theme-icon">home</i>
       <div class="mdui-list-item-content mdui-text-color-theme-text"><?php _e('首页'); ?></div>
     </a>
-  </div><?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
-  <div class="mdui-divider"></div><?php while ($pages->next()): ?>
-    <a class="mdui-list-item mdui-ripple" <?php if ($this->is('page', $pages->slug)): ?> <?php endif; ?> href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>">
+  </div><?php $this->widget('Widget_Contents_Page_List')->to($pages); ?><?php while ($pages->next()): ?>
+    <a class="mdui-list-item mdui-ripple<?php if($this->is('page', $pages->slug)): ?> mdui-list-item-active mdui-color-theme-a100<?php endif; ?>" href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>">
       <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-theme-icon"></i>
       <div class="mdui-list-item-content mdui-text-color-theme-text"><?php $pages->title(); ?></div>
     </a><?php endwhile; ?>
