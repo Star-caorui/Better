@@ -45,10 +45,14 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             <div class="mdui-card-actions postActions">
               <div class="mdui-divider underline"></div>
               <div class="widget">
-                <i class="mdui-icon material-icons mdui-text-color-theme-icon">comment</i>
-                <a class="mdui-text-color-theme-text" href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('%d'); ?></a>&nbsp;&nbsp;
-                <i class="mdui-icon material-icons mdui-text-color-theme-icon">access_time</i>
-                <span class="mdui-text-color-theme-text"><?php $this->date(); ?></span>
+                <span class="mdui-text-color-theme-text">
+                  <i class="mdui-icon material-icons mdui-text-color-theme-icon">access_time</i>
+                  <?php $this->date(); ?>
+                </span>
+                <a class="mdui-btn mdui-btn-dense mdui-ripple mdui-text-color-theme-text" href="<?php $this->permalink() ?>#comments">
+                  <i class="mdui-icon material-icons mdui-text-color-theme-icon">comment</i>
+                  <?php $this->commentsNum('%d'); ?>
+                </a>
               </div>
               <a class="mdui-btn mdui-ripple mdui-float-right mdui-text-color-theme-accent read-more" href="<?php $this->permalink() ?>"><?php _e('阅读')?></a>
               <br />
