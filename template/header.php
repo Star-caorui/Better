@@ -120,7 +120,7 @@
       <img class="mdui-card-header-avatar" src="https://q1.qlogo.cn/g?b=qq&s=640&nk=2549309641"/>
       <div class="mdui-card-header-title mdui-text-color-theme-text"><?php $this->author() ?></div>
       <div class="mdui-card-header-subtitle mdui-text-color-theme-text"><?php $this->options->description() ?></div>
-      <a href="https://web-worker.cn/action/logout" title="Logout" class="mdui-btn mdui-btn-icon mdui-card-menu" mdui-tooltip="{content: '<?php _e("登出"); ?>'}">
+      <a href="https://web-worker.cn/action/logout" class="mdui-btn mdui-btn-icon mdui-card-menu" mdui-tooltip="{content: '<?php _e("登出"); ?>'}">
         <i class="mdui-icon material-icons mdui-float-right mdui-text-color-theme-icon">exit_to_app</i>
       </a>
     </div>
