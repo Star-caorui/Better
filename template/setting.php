@@ -41,6 +41,9 @@ function themeConfig($form) {
     $form->addInput($key);
   }
 
+  $key = new Typecho_Widget_Helper_Form_Element_Text('sitebarLogo', NULL, NULL, _t('侧边栏头像'), _t('请填写超链接'));
+  $form->addInput($key);
+
   $footerInfoRight = new Typecho_Widget_Helper_Form_Element_Checkbox('footerInfoRight',
     array('showICPBeian' => _t('ICP备案'),
     'showBeian' => _t('公网安备案'),

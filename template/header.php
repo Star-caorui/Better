@@ -117,7 +117,7 @@
 <div class="mdui-drawer mdui-drawer-full-height mdui-drawer-close mdui-color-auto mdui-hidden-md-up" id="menu">
   <div class="mdui-list">
     <div class="mdui-card-header">
-      <img class="mdui-card-header-avatar" src="https://q1.qlogo.cn/g?b=qq&s=640&nk=2549309641"/>
+      <img class="mdui-card-header-avatar" src="<?php echo $this->options->sitebarLogo; ?>"/>
       <div class="mdui-card-header-title mdui-text-color-theme-text"><?php $this->author() ?></div>
       <div class="mdui-card-header-subtitle mdui-text-color-theme-text"><?php $this->options->description() ?></div>
     </div>
