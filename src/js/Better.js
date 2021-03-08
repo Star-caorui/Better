@@ -1,4 +1,4 @@
-/* 主题施工中 */
+/* 主题施工中 
 mdui.snackbar({
     message: '欢迎访问本站！',
     position: 'right-top',
@@ -9,7 +9,7 @@ mdui.snackbar({
     message: '本站近期主题正在施工，请不要到处乱点哦！',
     position: 'right-top',
     timeout:'3000'
-});
+}); */
 
 /* Site RunTime */
 function show_runtime(){
