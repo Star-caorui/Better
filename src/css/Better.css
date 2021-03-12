@@ -220,20 +220,8 @@ body, html {
   top: -33px
 }
 
-.postTitle {
-  display: none;
-  padding-bottom: 0px !important;
-}
-
-.postTitle a {
-  height: 72px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 .postContent {
   padding-top: 16px !important;
-  height: 54px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -284,16 +272,14 @@ body, html {
     height: 100%;
   }
 
-  .postTitle-Small {
-    display: none;
-  }
-
-  .postTitle {
-    display: block;
-  }
-
   .postTitle-and-postContent {
     height: 198px;
+  }
+
+  .postContent {
+    top: 48px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 

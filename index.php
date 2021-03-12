@@ -19,7 +19,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
               <div class="postCard-img">
                 <img src="<?php print_r(randomImg().'?'); echo rand(0,10000); ?>" loading="lazy" />
               </div>
-              <div class="mdui-card-media-covered postTitle-Small">
+              <div class="mdui-card-media-covered">
                 <div class="mdui-card-primary">
                   <div class="mdui-card-primary-title">
                     <a class="mdui-card-primary-title mdui-text-color-theme-accent" href="<?php $this->permalink() ?>"><?php $this->sticky(); echo '['; $this->category(',', false); echo ']'; $this->title(); ?></a>
@@ -37,10 +37,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
           </div>
           <div class="postCard-right">
             <div class="postTitle-and-postContent">
-              <div class="mdui-card-primary postTitle">
-                <a class="mdui-card-primary-title mdui-text-color-theme-accent" href="<?php $this->permalink() ?>"><?php $this->sticky(); echo '['; $this->category(',', false); echo ']'; $this->title(); ?></a>
-              </div>
-              <div class="mdui-card-content mdui-p-t-0 postContent"><?php $this->excerpt(60, '...'); ?></div>
+              <div class="mdui-card-content mdui-p-t-0 postContent"><?php $this->excerpt(110, '...'); ?></div>
             </div>
             <div class="mdui-card-actions postActions">
               <div class="mdui-divider underline"></div>

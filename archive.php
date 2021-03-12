@@ -17,9 +17,9 @@
           <div class="postCard-left">
             <div class="mdui-card-media">
               <div class="postCard-img">
-                <img src="<?php print_r(randomImg().'?'); echo rand(0,10000); ?>" loading="lazy"/>
+                <img src="<?php print_r(randomImg().'?'); echo rand(0,10000); ?>" loading="lazy" />
               </div>
-              <div class="mdui-card-media-covered postTitle-Small">
+              <div class="mdui-card-media-covered">
                 <div class="mdui-card-primary">
                   <div class="mdui-card-primary-title">
                     <a class="mdui-card-primary-title mdui-text-color-theme-accent" href="<?php $this->permalink() ?>"><?php $this->sticky(); echo '['; $this->category(',', false); echo ']'; $this->title(); ?></a>
@@ -37,18 +37,19 @@
           </div>
           <div class="postCard-right">
             <div class="postTitle-and-postContent">
-              <div class="mdui-card-primary postTitle">
-                <a class="mdui-card-primary-title mdui-text-color-theme-accent" href="<?php $this->permalink() ?>"><?php $this->sticky(); echo '['; $this->category(',', false); echo ']'; $this->title(); ?></a>
-              </div>
-              <div class="mdui-card-content mdui-p-t-0 postContent"><?php $this->excerpt(60, '...'); ?></div>
+              <div class="mdui-card-content mdui-p-t-0 postContent"><?php $this->excerpt(110, '...'); ?></div>
             </div>
             <div class="mdui-card-actions postActions">
               <div class="mdui-divider underline"></div>
               <div class="widget">
-                <i class="mdui-icon material-icons mdui-text-color-theme-icon">comment</i>
-                <a class="mdui-text-color-theme-text" href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('%d'); ?></a>&nbsp;&nbsp;
-                <i class="mdui-icon material-icons mdui-text-color-theme-icon">access_time</i>
-                <span class="mdui-text-color-theme-text"><?php $this->date(); ?></span>
+                <span class="mdui-text-color-theme-text">
+                  <i class="mdui-icon material-icons mdui-text-color-theme-icon">access_time</i>
+                  <?php $this->date(); ?>
+                </span>
+                <a class="mdui-btn mdui-btn-dense mdui-ripple mdui-text-color-theme-text" href="<?php $this->permalink() ?>#comments">
+                  <i class="mdui-icon material-icons mdui-text-color-theme-icon">comment</i>
+                  <?php $this->commentsNum('%d'); ?>
+                </a>
               </div>
               <a class="mdui-btn mdui-ripple mdui-float-right mdui-text-color-theme-accent read-more" href="<?php $this->permalink() ?>"><?php _e('阅读')?></a>
               <br />
