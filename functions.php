@@ -31,17 +31,18 @@ function defaultStaticFiles($str) {
 function randomImg() {
   $setting = Helper::options()->randomImg;
   $settingObjectStorage = Helper::options()->randomImgAPIUrl;
+  $random_str = '?' . random_int(0, 2333);
   switch ($setting) {
     case 'randomImgLocalhost':
-      return '此处为源站的URL';
+      return '此处为源站的URL' . $random_str;
       break;  
     case 'randomImgWebWorker':
-      return '此处为Web-Worker API的URL';
+      return '此处为Web-Worker API的URL' . $random_str;
       break;
     case 'randomImgGYMXBL':
-      return 'https://api.gymxbl.com/images/';
+      return 'https://api.gymxbl.com/images/' . $random_str;
       break;
     case 'randomImgAPI':
-      return $settingObjectStorage;
+      return $settingObjectStorage . $random_str;
   }
 }

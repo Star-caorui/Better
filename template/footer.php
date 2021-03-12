@@ -58,10 +58,15 @@
 <script
   src="<?php print_r(defaultStaticFiles('js/highlight.min.js?'.HIGHLIGHT_VERSION)); ?>"
   crossorigin="anonymous"
-  integrity="sha384-w8gmmdGHCqDJR/Bc+rE9AXKciU5qx2pqcVux6l4pSU26xoMsNz+Q3zoty8OFJG11"
+  integrity="sha384-BfWQ0T8CPeH2bEHmKrLhDzVuVyiYckfg88VybFIvosSawQKFtIpl9XZu6i4Ut9T1"
 ></script>
-<script src="<?php print_r(defaultStaticFiles('js/Better.js?').THEME_VERSION); ?>"></script>
+<script
+  src="<?php print_r(defaultStaticFiles('js/Better.js?').THEME_VERSION); ?>"
+  crossorigin="anonymous"
+  integrity=""
+></script>
 <script src="<?php $this->options->themeUrl('src/js/custom.js'); ?>"></script>
+<script>hljs.highlightAll();</script>
 <?php $this->footer(); ?>
 </body>
 </html>

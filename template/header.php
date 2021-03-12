@@ -39,6 +39,12 @@
     href="<?php print_r(defaultStaticFiles('css/Better.css?'.THEME_VERSION)); ?>"
     as="style"
     integrity=""/>
+  <link
+    rel="preload"
+    crossorigin="anonymous"
+    href="<?php $this->options->themeUrl('src/css/custom.css'); ?>"
+    as="style"/>
+
   <!-- Load Resources -->
   <link
     rel="stylesheet"
