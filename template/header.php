@@ -14,6 +14,13 @@
                                           'tag' => _t('标签 %s 下的文章') ,
                                           'author' => _t('%s 发布的文章')) , '', ' - ');
                                           ?><?php $this->options->title(); ?></title>
+  <?php if ($this->options->staticFiles === 'staticFilesJsdelivr') : ?>                  
+  <!-- Pre Connect -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net/" crossorigin>
+  <!-- Pre Connect -->
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net/">
+  <?php endif; ?>
+
   <!-- Pre Load Resources -->
   <link
     rel="preload"
@@ -24,9 +31,17 @@
   <link
     rel="preload"
     crossorigin="anonymous"
-    href="<?php print_r(defaultStaticFiles('css/github.min.css?'.HIGHLIGHT_VERSION)); ?>"
+    href="<?php print_r(defaultStaticFiles('css/atom-one-light.min.css?'.HIGHLIGHT_VERSION)); ?>"
     as="style"
-    integrity="sha384-5pflc8J4rhuPGHZTObXqqZez/ZtlqMfkkj5uI9ysuNQXJfhr6DOi53QfFXUAMAtA"/>
+    integrity="sha384-c0jGChqOfkWMSoSFNGdcErdZrbpiGj6dlAQgb59KF6Gfv0MbdgjODDCuCKWuVwZ7"
+    media="not (prefers-color-scheme: dark)"/>
+  <link
+    rel="preload"
+    crossorigin="anonymous"
+    href="<?php print_r(defaultStaticFiles('css/atom-one-dark.min.css?'.HIGHLIGHT_VERSION)); ?>"
+    as="style"
+    integrity="sha384-2mVv4U5XTQ0ho/MFZzqOUxDkbF3lvml7hD1lGfOXf3LqbpSPcBrg0Gic+c40NTem"
+    media="(prefers-color-scheme: dark)"/>
   <link
     rel="preload"
     crossorigin="anonymous"
@@ -54,8 +69,15 @@
   <link
     rel="stylesheet"
     crossorigin="anonymous"
-    href="<?php print_r(defaultStaticFiles('css/github.min.css?'.HIGHLIGHT_VERSION)); ?>"
-    integrity="sha384-5pflc8J4rhuPGHZTObXqqZez/ZtlqMfkkj5uI9ysuNQXJfhr6DOi53QfFXUAMAtA"/>
+    href="<?php print_r(defaultStaticFiles('css/atom-one-light.min.css?'.HIGHLIGHT_VERSION)); ?>"
+    integrity="sha384-c0jGChqOfkWMSoSFNGdcErdZrbpiGj6dlAQgb59KF6Gfv0MbdgjODDCuCKWuVwZ7"
+    media="not (prefers-color-scheme: dark)"/>
+  <link
+    rel="stylesheet"
+    crossorigin="anonymous"
+    href="<?php print_r(defaultStaticFiles('css/atom-one-dark.min.css?'.HIGHLIGHT_VERSION)); ?>"
+    integrity="sha384-2mVv4U5XTQ0ho/MFZzqOUxDkbF3lvml7hD1lGfOXf3LqbpSPcBrg0Gic+c40NTem"
+    media="(prefers-color-scheme: dark)"/>
   <link
     rel="stylesheet"
     crossorigin="anonymous"
