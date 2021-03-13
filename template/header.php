@@ -33,8 +33,7 @@
     crossorigin="anonymous"
     href="<?php print_r(defaultStaticFiles('css/atom-one-light.min.css?'.HIGHLIGHT_VERSION)); ?>"
     as="style"
-    integrity="sha384-c0jGChqOfkWMSoSFNGdcErdZrbpiGj6dlAQgb59KF6Gfv0MbdgjODDCuCKWuVwZ7"
-    media="not (prefers-color-scheme: dark)"/>
+    integrity="sha384-c0jGChqOfkWMSoSFNGdcErdZrbpiGj6dlAQgb59KF6Gfv0MbdgjODDCuCKWuVwZ7"/>
   <link
     rel="preload"
     crossorigin="anonymous"
@@ -70,8 +69,7 @@
     rel="stylesheet"
     crossorigin="anonymous"
     href="<?php print_r(defaultStaticFiles('css/atom-one-light.min.css?'.HIGHLIGHT_VERSION)); ?>"
-    integrity="sha384-c0jGChqOfkWMSoSFNGdcErdZrbpiGj6dlAQgb59KF6Gfv0MbdgjODDCuCKWuVwZ7"
-    media="not (prefers-color-scheme: dark)"/>
+    integrity="sha384-c0jGChqOfkWMSoSFNGdcErdZrbpiGj6dlAQgb59KF6Gfv0MbdgjODDCuCKWuVwZ7"/>
   <link
     rel="stylesheet"
     crossorigin="anonymous"
