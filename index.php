@@ -26,7 +26,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                   </div>
                   <div class="mdui-card-primary-subtitle">
                     <?php _e('作者'); ?> <a class='mdui-text-color-theme-accent' href="<?php $this->author->permalink(); ?>" rel="author"><?php $this->author(); ?></a> |
-                    <?php _e('时间'); ?> <time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time>
+                    <?php _e('浏览量'); ?> <?php get_post_view($this) ?> |
                   </div>
                 </div>
               </div>
