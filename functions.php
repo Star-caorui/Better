@@ -6,7 +6,8 @@ require_once("template/setting.php");
 define("AUTHOR_NAME", "Star-caorui");
 define("THEME_NAME", "Better");
 define("THEME_BRANCH", "alpha");
-define("THEME_VERSION", "0.0.1.t".time());
+define("THEME_VERSION", "0.0.1");
+define("CLOUD_VERSION", "0.0.1");
 define("MDUI_VERSION", "1.0.1");
 define("HIGHLIGHT_VERSION", "10.6.0");
 
@@ -44,5 +45,15 @@ function randomImg() {
       break;
     case 'randomImgAPI':
       return $settingObjectStorage . $random_str;
+  }
+}
+
+function themeCheckUpdate() {
+  if (THEME_VERSION === CLOUD_VERSION) {
+    return ' (当前版本已是最新版本)';
+  } elseif (THEME_VERSION < CLOUD_VERSION) {
+    return ' (发现新版本:'.CLOUD_VERSION.')';
+  } elseif (THEME_VERSION > CLOUD_VERSION) {
+    return ' (警告：本地版本过新！)';
   }
 }

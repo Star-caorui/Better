@@ -23,19 +23,26 @@
    <div class="footer-right mdui-col-xs-3 mdui-valign">
      <div class="mdui-center">
        <div>
-         <?php 
-           if (!empty($this->options->footerInfoRight)) {
-             if (in_array('showICPBeian', $this->options->footerInfoRight)) {
-               print_r($this->options->icpBeian.PHP_EOL);
-             }
-             if (in_array('showBeian', $this->options->footerInfoRight)) {
-               print_r('         '.$this->options->beian.PHP_EOL);
-             }
-             if (in_array('showBeian', $this->options->footerInfoRight)) {
-               print_r('         '.'<a href="https://icp.gov.moe" target="_blank"><img src="https://icp.gov.moe/images/ico64.png" alt="萌ICP备案的Logo" style="vertical-align: middle;" width="20" height="20">萌ICP备 </a>'.PHP_EOL);
-               print_r('         '.$this->options->moeBeian.PHP_EOL);
-             }
-           }
+         <?php
+           $codeAlignment = '         ';
+           if (!empty($this->options->footerInfoRight)) :
+             if (in_array('showICPBeian', $this->options->footerInfoRight)) :
+               if ($this->options->showICPBeian !== '') {
+                 print_r('<a href="https://beian.miit.gov.cn/" target="_blank">'.$this->options->icpBeian.'</a>'.'<br/>'.PHP_EOL);
+               }
+             endif;
+             if (in_array('showBeian', $this->options->footerInfoRight)) :
+               if ($this->options->beian !== '') {
+                 print_r($codeAlignment.'<a href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode='.$this->options->beian.'" target="_blank"><img src="https://web-worker.cn/usr/themes/Better/src/img/National Emblem of the People\'s Republic of China.png" alt="中华人民共和国国徽" style="vertical-align: middle;" width="20" height="20">蒙公网安备 '.$this->options->beian.'</a><br/>'.PHP_EOL);
+               }
+             endif;
+             if (in_array('showMoeBeian', $this->options->footerInfoRight)) :
+               if ($this->options->moeBeian !== '') {
+                 print_r($codeAlignment.'<a href="https://icp.gov.moe" target="_blank"><img src="'.defaultStaticFiles('img/moeICP.png').'" alt="萌ICP备案的Logo" style="vertical-align: middle;" width="20" height="20" loading="lazy">萌ICP备</a>'.PHP_EOL);
+                 print_r($codeAlignment.'<a href="https://icp.gov.moe/?keyword='.$this->options->moeBeian.'" target="_blank">'.$this->options->moeBeian.'号</a>'.'<br/>'.PHP_EOL);
+               }
+             endif;
+           endif;
          ?>
        </div>
        <div>
