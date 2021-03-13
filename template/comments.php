@@ -52,9 +52,8 @@
             <div class="mdui-card mdui-hoverable postCard">
               <div class="mdui-card-primary">
                 <div class="mdui-card-primary-title"><?php $this->commentsNum(_t('暂无评论'), _t('仅有一条评论'), _t('已有 %d 条评论')); ?></div>
-                <div class"article-page mdui-typo">
-                评论模块重写中，暂时可能无法使用！
-                <?php #print_r($comments); ?>
+                <div class="article-page mdui-typo">
+                <?php $comments->listComments(); ?>
                 <?php $comments->pageNav('&laquo; 前一页', '后一页 &raquo;'); ?>
                 </div>
               </div>
