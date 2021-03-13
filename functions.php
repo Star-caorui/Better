@@ -1,8 +1,6 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
-require_once("template/setting.php");
-
 define("AUTHOR_NAME", "Star-caorui");
 define("THEME_NAME", "Better");
 define("THEME_BRANCH", "alpha");
@@ -85,3 +83,6 @@ function get_post_view($archive){
   }
   echo $row['views'];
 }
+
+require_once("template/setting.php");
+require_once("template/custom.php");
