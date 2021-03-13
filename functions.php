@@ -19,7 +19,7 @@ function defaultStaticFiles($str) {
     case 'staticFilesGithub':
       return 'https://raw.githubusercontent.com/' . AUTHOR_NAME . '/' . THEME_NAME . '/' . THEME_BRANCH . '/src/' . $str;
       break;
-    case 'staticFilesJsdelivr':
+    case 'staticFilesJsDelivr':
       return 'https://cdn.jsdelivr.net/gh/' . AUTHOR_NAME . '/' . THEME_NAME . '@' . THEME_BRANCH . '/src/' . $str;
       break;
     case 'staticFilesObjectStorage':

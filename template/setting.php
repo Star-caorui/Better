@@ -17,7 +17,7 @@ function themeConfig($form) {
   $staticFiles = new Typecho_Widget_Helper_Form_Element_Select('staticFiles', array(
     'staticFilesLocalhost' => '本地',
     'staticFilesGithub' => 'Github',
-    'staticFilesJsdelivr' => 'jsdelivr',
+    'staticFilesJsDelivr' => 'JsDelivr',
     'staticFilesObjectStorage' => '对象存储'
     ), 'staticFilesLocalhost', _t('静态文件源'), _t('推荐选择 “JsDelivr源”<br/>注：如果选择对象存储，请先保存后再编辑对象存储的路径！'));
   $form->addInput($staticFiles->multiMode());
