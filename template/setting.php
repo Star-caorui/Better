@@ -39,10 +39,10 @@ function themeConfig($form) {
   }
 
   $footerInfoLeft = new Typecho_Widget_Helper_Form_Element_Checkbox('footerInfoLeft',
-    array('showMail' => _t('邮箱'),
-    'ShowOther1' => _t('待开发'),
-    'ShowOther2' => _t('待开发')),
-    array('showMail', 'ShowOther1', 'ShowOther2'), _t('页脚个人信息'));
+    array(
+    'showMail' => _t('邮箱'),
+    'ShowOther' => _t('待开发')),
+    array('showMail', 'ShowOther'), _t('页脚个人信息'));
   $form->addInput($footerInfoLeft->multiMode());
   if (!empty(Helper::options()->footerInfoLeft) && in_array('showMail', Helper::options()->footerInfoLeft)) {
     $key = new Typecho_Widget_Helper_Form_Element_Text('mailInfo', NULL, NULL, _t('邮箱'));
