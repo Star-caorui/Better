@@ -43,6 +43,13 @@ body, html {
 }
 
 /**
+ ** 评论取消功能 下划线隐藏
+ */
+.cancel-comment-reply a {
+  text-decoration: none !important;
+}
+
+/**
  ** 搜索框
  */
 .search {
