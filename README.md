@@ -27,56 +27,36 @@
   - Github：[Better][4]
 
 ### 帮助我
-  由于我想完全控制这套主题的代码风格，所以您的帮助我可能不会全部接受。
+  请通过我的联系方式帮助Better变得更好！
 
 ### 特别感谢
   由衷感谢以下项目及这些项目的开发者。
-  - [MDUI][5] By [zdhxiong][6]
+  - 前端库：[MDUI][5] By [zdhxiong][6]
+  - 代码高亮：[HighLight][7]
+  - 部分页脚代码：[materiality-typecho-theme][8] By [EAimTY][9]
+  - 分页器代码：By [ohmyga][10]
+  - 版权所属信息：[Cuckoo][11] By [Bhao][12]
 
 ### 移植相关
-  - [Better For Wordpress][7] (By [small_xu038][8])
+  - [Better For Wordpress][13] (By [small_xu038][14])
 
 ### 开发进度
   进度树：立项->**初版开发**->增量功能更新->维护阶段
 
   当前阶段：初版开发
 
-### 开发代办
-  - 初版 页首 ✓
-  - 初版 页脚 ✓
-  - 初版 首页 ✓
-  - 初版 文章页面 ✓
-  - 初版 独立页面 ✓
-  - 初版 友链页面 ✓
-  - 初版 404页面 ✓
-  - 初版 后台设置页 ✓
-  - 初版 翻页器 ✓
-  - 优化 页首 顶栏背景色 doing
-  - 优化 首页 卡片内小信息 doing
-  - 优化 代码 doing
-  - 开发 评论列表 doing
-  - 重写 独立页面 doing
-  - 重写 文章页 doing
-  - 重写 侧边栏 to do
-  - 重写 搜索页 to do
-  - 初版 函数组 to do
-  - 初版 归档页 to do
 
-### Bug 修复
-  - 当前暂未有人提交Bug
-
-### 建议修改
-  - [small_xu038][9]：卡片内标题改成白色或者图片和文章信息分开
-  - [small_xu038][10]：时间仅保留底部的
-
-
-[1]: https://web-worker.cn
-[2]: https://www.ilolita.cn/
-[3]: mailto:Star_caorui@qq.com
-[4]: https://github.com/Star-caorui/Better
-[5]: https://www.mdui.org/
-[6]: https://github.com/zdhxiong
-[7]: https://www.gymxbl.com/3080.html
-[8]: https://www.gymxbl.com/
-[9]: https://www.gymxbl.com/
-[10]: https://www.gymxbl.com/
+  [1]: https://web-worker.cn
+  [2]: https://www.ilolita.cn
+  [3]: mailto:Star_caorui@qq.com
+  [4]: https://github.com/Star-caorui/Better
+  [5]: https://www.mdui.org
+  [6]: https://github.com/zdhxiong
+  [7]: https://highlightjs.org
+  [8]: https://github.com/EAimTY/materiality-typecho-theme
+  [9]: https://www.eaimty.com
+  [10]: https://ohmyga.cn
+  [11]: https://github.com/Bhaoo/Cuckoo
+  [12]: https://dwd.moe
+  [13]: https://www.gymxbl.com/3080.html
+  [14]: https://www.gymxbl.com
