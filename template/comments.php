@@ -17,12 +17,12 @@
                   </div><?php else: ?>
 
                   <div class="mdui-row">
-                    <div class="mdui-textfield mdui-col-xs-6">
+                    <div class="mdui-textfield mdui-col-sm-6">
                       <label for="author" class="mdui-textfield-label"><?php _e('昵称'); ?></label>
                       <input id="author" class="mdui-textfield-input" name="author" type="text" value="<?php $this->remember('author'); ?>" required/>
                       <div class="mdui-textfield-error">您尚未输入昵称，昵称不能是空哦～</div>
                     </div>
-                    <div class="mdui-textfield mdui-col-xs-6">
+                    <div class="mdui-textfield mdui-col-sm-6">
                       <label for="mail" class="mdui-textfield-label"><?php _e('Email'); ?></label>
                       <input id="mail" class="mdui-textfield-input" name="mail" type="email" value="<?php $this->remember('mail'); ?>"<?php if ($this->options->commentsRequireMail): ?> required<?php endif; ?>/>
                       <div class="mdui-textfield-error">您输入的不是一个合法邮箱地址哦～</div>
