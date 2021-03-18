@@ -49,6 +49,16 @@ body, html {
   text-decoration: none !important;
 }
 
+
+/**
+ ** 文章底部信息样式（代码来源：https://github.com/bhaoo/Cuckoo/ 感谢Bhao大佬！）
+ */
+.article-copy {
+  padding: 10px;
+  border-bottom: 1px dashed #797979;
+  border-top: 1px dashed #797979;
+}
+
 /**
  ** 搜索框
  */

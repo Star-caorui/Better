@@ -21,7 +21,16 @@
                 </div>
               </div>
             </div>
-            <div class="article-page mdui-typo"><?php $this->content(); ?></div>
+            <div class="article-page mdui-typo">
+              <?php $modified = intval((time() - $this->modified) / 86400); $created = intval((time() - $this->created) / 86400); if ($modified > 30) { echo "<blockquote class='mdui-text-color-theme-accent'>请注意，本文编写于<span class='mdui-text-color-red-accent'> $created </span>天前，最后修改于<span class='mdui-text-color-red-accent'> $modified </span>天前，其中某些信息可能已经过时。</blockquote><hr/>"; } $this->content(); ?>
+
+              <div class="article-copy mdui-text-color-theme-accent">
+                版权所属<span class="mdui-text-color-black">：<a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title() ?></a></span><br/>
+                本文作者<span class="mdui-text-color-black">：<a href="<?php $this->author->permalink(); ?>" rel="author"><?php $this->author(); ?></a></span><br/>
+                本文链接<span class="mdui-text-color-black">：<a href="<?php $this->permalink() ?>"><?php $this->permalink() ?></a></span><br/>
+                版权声明<span class="mdui-text-color-black">：<?php echo $this->options->articleCopy ?></span>
+              </div>
+            </div>
 
             <!-- 翻页器开始: 目前不完善，尚未适配小尺寸设备。 -->
             <!--<div class="better-center-box mdui-center">
