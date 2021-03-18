@@ -86,3 +86,4 @@ function get_post_view($archive){
 
 require_once("template/setting.php");
 require_once("template/custom.php");
+require_once("template/themeFields.php");
