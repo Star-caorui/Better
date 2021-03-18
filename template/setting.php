@@ -14,7 +14,7 @@ function themeConfig($form) {
   $key = new Typecho_Widget_Helper_Form_Element_Text('sitebarLogo', NULL, NULL, _t('侧边栏头像'), _t('请填写超链接'));
   $form->addInput($key);
 
-  $key = new Typecho_Widget_Helper_Form_Element_Text('articleCopy', NULL, NULL, _t('文章许可协议'), _t('示例格式：&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;'));
+  $key = new Typecho_Widget_Helper_Form_Element_Text('articleCopy', NULL, NULL, _t('文章许可协议'), _t('提示：如不填写将默认由文章作者独占版权，禁止出于任何目的去使用，修改，和分享。<br/>示例格式：&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;'));
   $form->addInput($key);
 
   $staticFiles = new Typecho_Widget_Helper_Form_Element_Select('staticFiles', array(

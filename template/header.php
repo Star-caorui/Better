@@ -147,7 +147,7 @@
 <div class="mdui-drawer mdui-drawer-full-height mdui-drawer-close mdui-color-auto mdui-hidden-md-up" id="menu">
   <div class="mdui-list">
     <div class="mdui-card-header">
-      <img class="mdui-card-header-avatar" src="<?php echo $this->options->sitebarLogo; ?>" loading="lazy"/>
+      <img class="mdui-card-header-avatar" src="<?php $this->options->sitebarLogo(); ?>" loading="lazy"/>
       <div class="mdui-card-header-title mdui-text-color-theme-text"><?php $this->author() ?></div>
       <div class="mdui-card-header-subtitle mdui-text-color-theme-text"><?php $this->options->description() ?></div>
     </div>

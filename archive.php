@@ -17,7 +17,7 @@
           <div class="postCard-left">
             <div class="mdui-card-media">
               <div class="postCard-img">
-                <img src="<?php print_r(randomImg()); ?>" loading="lazy"/>
+                <img src="<?php echo randomImg(); ?>" loading="lazy"/>
               </div>
               <div class="mdui-card-media-covered">
                 <div class="mdui-card-primary">

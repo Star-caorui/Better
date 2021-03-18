@@ -14,7 +14,7 @@ $this->need('template/header.php'); ?>
   <div class="mdui-card mdui-hoverable postCard">
     <div class="mdui-card-media">
       <div class="page-img">
-        <img src="<?php print_r(randomImg()); ?>"/>
+        <img src="<?php echo randomImg(); ?>"/>
       </div>
       <div class="mdui-card-menu">
         <button class="mdui-btn mdui-btn-icon mdui-text-color-white">
