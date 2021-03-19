@@ -26,6 +26,13 @@ function defaultStaticFiles($str) {
       return $settingObjectStorage.$str;
   }
 }
+function randomImgLocalhost() {
+  $randomImgList = scandir(__DIR__ . '/src/img/random/');
+  array_shift($randomImgList);
+  array_shift($randomImgList);
+  $randomNum = random_int(1, count($randomImgList))-1;
+  return Helper::options()->themeUrl . '/src/img/random/' . $randomImgList["$randomNum"];
+}
 
 function randomImg() {
   $setting = Helper::options()->randomImg;
@@ -33,7 +40,7 @@ function randomImg() {
   $random_str = '?' . random_int(0, 2333);
   switch ($setting) {
     case 'randomImgLocalhost':
-      return '此处为源站的URL' . $random_str;
+      return randomImgLocalhost() . $random_str;
       break;  
     case 'randomImgWebWorker':
       return '此处为Web-Worker API的URL' . $random_str;
