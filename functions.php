@@ -64,7 +64,7 @@ function themeCheckUpdate() {
 }
 
 /* 这段代码来自于Cuckoo, 感谢布好！ */
-function get_post_view($archive){
+function getPostView($archive){
   $cid = $archive->cid;
   $db = Typecho_Db::get();
   $prefix = $db->getPrefix();

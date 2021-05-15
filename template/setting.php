@@ -22,7 +22,7 @@ function themeConfig($form) {
     'staticFilesGithub' => 'Github',
     'staticFilesJsDelivr' => 'JsDelivr',
     'staticFilesObjectStorage' => '对象存储'
-    ), 'staticFilesLocalhost', _t('静态文件源'), _t('推荐选择 “JsDelivr源”<br/>注：如果选择对象存储，请先保存后再编辑对象存储的路径！'));
+    ), 'staticFilesLocalhost', _t('静态文件源'), _t('推荐选择【JsDelivr】源，如果您需要自定义修改，或使用全站CDN，请使用【本地】源。<br/>注：如果选择【对象存储】，请先保存后再编辑对象存储的路径！'));
   $form->addInput($staticFiles->multiMode());
   if (Helper::options()->staticFiles == 'staticFilesObjectStorage') {
     $key = new Typecho_Widget_Helper_Form_Element_Text('staticFilesObjectStorageUrl', NULL, NULL, _t('对象存储'), _t('示例格式:https://src.web-worker.com/'));
@@ -34,7 +34,7 @@ function themeConfig($form) {
     'randomImgWebWorker' => 'Web-Worker API(开发中)',
     'randomImgGYMXBL' => '孤影墨香 API',
     'randomImgAPI' => '其他图片API(可能存在安全隐患)'
-    ), 'randomImgGYMXBL', _t('随机图片源'), _t('推荐选择 “Web-Worker API”<br/>如果您的文章，独立页面没有单独设置头图的话，则会调用此处的API。<br/>如果选择其他API，请先保存后再编辑！'));
+    ), 'randomImgGYMXBL', _t('随机图片源'), _t('推荐选择【Web-Worker API】<br/>如果您的文章，独立页面没有单独设置头图的话，则会调用此处的API。<br/>如果选择其他API，请先保存后再编辑！'));
   $form->addInput($randomImg->multiMode());
   if (Helper::options()->randomImg == 'randomImgAPI') {
     $key = new Typecho_Widget_Helper_Form_Element_Text('randomImgAPIUrl', NULL, NULL, _t('随机代码图API'), _t('示例格式:https://api.web-worker.com/?type=randomImg'));

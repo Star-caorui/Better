@@ -348,7 +348,8 @@ footer a:hover {
   .footer-left {
     height: inherit;
     padding: 0 8px;
-    white-space: nowrap text-align:left;
+    text-align:left;
+    white-space: nowrap
   }
 
   .footer-center {
