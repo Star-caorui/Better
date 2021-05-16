@@ -34,10 +34,29 @@ function themeConfig($form) {
     'randomImgWebWorker' => 'Web-Worker API(开发中)',
     'randomImgGYMXBL' => '孤影墨香 API',
     'randomImgAPI' => '其他图片API(可能存在安全隐患)'
-    ), 'randomImgGYMXBL', _t('随机图片源'), _t('推荐选择【Web-Worker API】<br/>如果您的文章，独立页面没有单独设置头图的话，则会调用此处的API。<br/>如果选择其他API，请先保存后再编辑！'));
+    ), 'randomImgGYMXBL', _t('随机图片源'), _t('推荐选择【Web-Worker API】<br/>如果您的文章，独立页面没有单独设置头图的话，则会调用此处的API。<br/>如果选择【其他API】，请先保存后再编辑！'));
   $form->addInput($randomImg->multiMode());
   if (Helper::options()->randomImg == 'randomImgAPI') {
     $key = new Typecho_Widget_Helper_Form_Element_Text('randomImgAPIUrl', NULL, NULL, _t('随机代码图API'), _t('示例格式:https://api.web-worker.com/?type=randomImg'));
+    $form->addInput($key);
+  }
+
+  $commentAvatar = new Typecho_Widget_Helper_Form_Element_Select('commentAvatar', array(
+    'default' => '默认',
+    'priorityUseQQAvatar' => '优先使用QQ头像'
+    ), 'default', _t('评论头像源'), _t('推荐选择【优先使用QQ头像】，近期发现用户报告使用QQ头像可能导致QQ号泄露到前端，请进行取舍再操作！<br/>如果选择【默认】Better将不会再次处理评论头像源，将使用Typecho默认的算法获取头像源。<br/>如果选择【优先使用QQ头像】Better将尝试获取QQ头像，将会优先使用QQ头像，如获取失败将尝试回退Gravatar头像。'));
+  $form->addInput($commentAvatar->multiMode());
+
+  $gravatarUrl = new Typecho_Widget_Helper_Form_Element_Select('gravatarUrl', array(
+    'gravatarUrlWebWorker' => 'Web-Worker Gravatar 加速服务 (开发中)',
+    'gravatarUrlGeekzu' => '极客族 Gravatar 加速服务',
+    'gravatarUrlGYMXBL' => '孤影墨香 Gravatar 加速服务',
+    'gravatarUrlTypechoConfigFile' => 'Typecho配置文件的 "__TYPECHO_GRAVATAR_PREFIX__"',
+    'gravatarUrlAPI' => '其他Gravatar 加速服务(可能存在安全隐患)'
+    ), 'gravatarUrlGeekzu', _t('Gravatar 镜像加速服务'), _t('推荐选择【Web-Worker API】<br/>推荐选择一个稳定的头像服务器，例如【极客族】<br/>如果选择【其他API】，请先保存后再编辑！'));
+  $form->addInput($gravatarUrl->multiMode());
+  if (Helper::options()->gravatarUrl == 'gravatarUrlAPI') {
+    $key = new Typecho_Widget_Helper_Form_Element_Text('gravatarAPI', NULL, NULL, _t('自定义 Gravatar 镜像加速服务'), _t('示例格式:https://api.web-worker.com/gravatar/'));
     $form->addInput($key);
   }
 

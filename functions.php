@@ -15,15 +15,22 @@ function defaultStaticFiles($str) {
   switch ($setting) {
     case 'staticFilesLocalhost':
       return Helper::options()->themeUrl . '/src/' . $str;
-      break;  
+      break;
+
     case 'staticFilesGithub':
       return 'https://raw.githubusercontent.com/' . AUTHOR_NAME . '/' . THEME_NAME . '/' . THEME_BRANCH . '/src/' . $str;
       break;
+
     case 'staticFilesJsDelivr':
       return 'https://cdn.jsdelivr.net/gh/' . AUTHOR_NAME . '/' . THEME_NAME . '@' . THEME_BRANCH . '/src/' . $str;
       break;
+
     case 'staticFilesObjectStorage':
       return $settingObjectStorage.$str;
+
+    default:
+      return 'https://cdn.jsdelivr.net/gh/' . AUTHOR_NAME . '/' . THEME_NAME . '@' . THEME_BRANCH . '/src/' . $str;
+      break;
   }
 }
 function randomImgLocalhost() {
@@ -41,15 +48,22 @@ function randomImg() {
   switch ($setting) {
     case 'randomImgLocalhost':
       return randomImgLocalhost() . $random_str;
-      break;  
+      break;
+
     case 'randomImgWebWorker':
       return '此处为Web-Worker API的URL' . $random_str;
       break;
+
     case 'randomImgGYMXBL':
       return 'https://api.gymxbl.com/images/' . $random_str;
       break;
+
     case 'randomImgAPI':
       return $settingObjectStorage . $random_str;
+
+    default:
+      return 'https://api.gymxbl.com/images/' . $random_str;
+      break;
   }
 }
 
@@ -89,6 +103,62 @@ function getPostView($archive){
     }
   }
   echo $row['views'];
+}
+
+function getQQNumber($email) {
+  $qqMailPrefix = (substr($email,-7) === '@qq.com') ? str_replace('@qq.com','',$email) : NULL;
+  $qqNumber = is_numeric($qqMailPrefix) ? $qqMailPrefix : NULL;
+  return $qqNumber;
+}
+
+function getQQNickname($email) {
+  $qqInfoPrefix = 'https://r.qzone.qq.com/fcg-bin/cgi_get_portrait.fcg?uins=';
+  $data = getQQNumber($email) ? json_decode(iconv('GB18030', 'UTF-8', str_replace('portraitCallBack(','',rtrim(file_get_contents($qqInfoPrefix.getQQNumber($email)),')'))))->{getQQNumber($email)}['6'] : NULL;
+  
+  return $data;
+}
+/* 这段代码基于Cuckoo二开, 感谢布好！ */
+function getCommentAvatar($email) {
+  $qqAvatarDomainPrefix = 'https://thirdqq.qlogo.cn/headimg_dl?bs=qq&spec=640&dst_uin=';
+  $gravatarDomainPrefix = 'https://sdn.geekzu.org/avatar/';
+  switch (Helper::options()->gravatarUrl) {
+    case 'gravatarUrlWebWorker':
+      $gravatarDomainPrefix = '此处为Web-Worker API的URL';
+      break;
+
+    case 'gravatarUrlGeekzu':
+      $gravatarDomainPrefix = 'https://sdn.geekzu.org/avatar/';
+      break;
+
+    case 'gravatarUrlGYMXBL':
+      $gravatarDomainPrefix = 'https://i.ilolita.cn/avatar/';
+      break;
+
+    case 'gravatarUrlTypechoConfigFile':
+      $gravatarDomainPrefix = defined('__TYPECHO_GRAVATAR_PREFIX__') ? __TYPECHO_GRAVATAR_PREFIX__ : $gravatarDomainPrefix;
+      break;
+
+    case 'gravatarUrlAPI':
+      $gravatarDomainPrefix = Helper::options()->gravatarAPI;
+      break;
+
+    default:
+      $gravatarDomainPrefix = $gravatarDomainPrefix;
+      break;
+  }
+
+  $defaultAvatar = $gravatarDomainPrefix . strtolower(md5($email) . '?d=mm');
+  $priorityQQAvatar = getQQNumber($email) ? $qqAvatarDomainPrefix /**. getQQNumber($email)**/ : $defaultAvatar; // 在泄露QQ号的bug修复之前不打算开放此功能
+
+  switch (Helper::options()->commentAvatar) {
+    case 'priorityUseQQAvatar':
+      return $priorityQQAvatar;
+      break;
+
+    default:
+      return $defaultAvatar;
+      break;
+  }
 }
 
 require_once("template/setting.php");

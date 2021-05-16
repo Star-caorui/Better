@@ -398,3 +398,15 @@ footer a:hover {
     line-height: 20px
   }
 }
+
+/**
+ ** 评论
+ **/
+.comment-list {
+  margin: 0;
+  padding-left: 0;
+}
+
+.mdui-card-actions {
+  padding: 16px;
+}
