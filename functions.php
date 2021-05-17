@@ -148,7 +148,7 @@ function getCommentAvatar($email) {
   }
 
   $defaultAvatar = $gravatarDomainPrefix . strtolower(md5($email) . '?d=mm');
-  $priorityQQAvatar = getQQNumber($email) ? $qqAvatarDomainPrefix /**. getQQNumber($email)**/ : $defaultAvatar; // 在泄露QQ号的bug修复之前不打算开放此功能
+  $priorityQQAvatar = getQQNumber($email) ? 'data:image/png;base64,'.base64_encode(file_get_contents($qqAvatarDomainPrefix.getQQNumber($email))) : $defaultAvatar; // 在泄露QQ号的bug修复之前不打算开放此功能
 
   switch (Helper::options()->commentAvatar) {
     case 'priorityUseQQAvatar':

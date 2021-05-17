@@ -44,7 +44,7 @@ function themeConfig($form) {
   $commentAvatar = new Typecho_Widget_Helper_Form_Element_Select('commentAvatar', array(
     'default' => '默认',
     'priorityUseQQAvatar' => '优先使用QQ头像'
-    ), 'default', _t('评论头像源'), _t('推荐选择【优先使用QQ头像】，近期发现用户报告使用QQ头像可能导致QQ号泄露到前端，请进行取舍再操作！<br/>如果选择【默认】Better将不会再次处理评论头像源，将使用Typecho默认的算法获取头像源。<br/>如果选择【优先使用QQ头像】Better将尝试获取QQ头像，将会优先使用QQ头像，如获取失败将尝试回退Gravatar头像。'));
+    ), 'default', _t('评论头像源'), _t('推荐选择【优先使用QQ头像】<br/>如果选择【默认】Better将不会再次处理评论头像源，将使用Typecho默认的算法获取头像源。<br/>如果选择【优先使用QQ头像】Better将尝试获取QQ头像，将会优先使用QQ头像，如获取失败将尝试回退Gravatar头像。'));
   $form->addInput($commentAvatar->multiMode());
 
   $gravatarUrl = new Typecho_Widget_Helper_Form_Element_Select('gravatarUrl', array(

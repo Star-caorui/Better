@@ -40,7 +40,7 @@ function threadedComments($comments, $options) {
                 </div>
               </div>
               <div class="mdui-card-primary-title"><?php _e('添加新评论'); ?></div>
-                <form id="comment-form" class="mdui-p-a-2" role="form" method="post" action="<?php $this->commentUrl() ?>"><?php if($this->options->commentAvatar === 'priorityUseQQAvatar') : ?><div>Better隐私保护：当前站点正通过QQ邮箱获取您的QQ头像，但QQ头像会泄露您的QQ号，建议使用其他邮箱来保护您的隐私。</div><br/><?php endif; if($this->user->hasLogin()): ?>
+                <form id="comment-form" class="mdui-p-a-2" role="form" method="post" action="<?php $this->commentUrl() ?>"><?php if($this->user->hasLogin()): ?>
 
                   <div class="mdui-typo"><?php _e('登录身份: '); ?>
                     <a href="<?php $this->options->profileUrl(); ?>"><?php $this->user->screenName(); ?></a>
