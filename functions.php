@@ -16,18 +16,14 @@ function defaultStaticFiles($str) {
     case 'staticFilesLocalhost':
       return Helper::options()->themeUrl . '/src/' . $str;
       break;
-
     case 'staticFilesGithub':
       return 'https://raw.githubusercontent.com/' . AUTHOR_NAME . '/' . THEME_NAME . '/' . THEME_BRANCH . '/src/' . $str;
       break;
-
     case 'staticFilesJsDelivr':
       return 'https://cdn.jsdelivr.net/gh/' . AUTHOR_NAME . '/' . THEME_NAME . '@' . THEME_BRANCH . '/src/' . $str;
       break;
-
     case 'staticFilesObjectStorage':
       return $settingObjectStorage.$str;
-
     default:
       return 'https://cdn.jsdelivr.net/gh/' . AUTHOR_NAME . '/' . THEME_NAME . '@' . THEME_BRANCH . '/src/' . $str;
       break;
@@ -49,18 +45,14 @@ function randomImg() {
     case 'randomImgLocalhost':
       return randomImgLocalhost() . $random_str;
       break;
-
     case 'randomImgWebWorker':
       return '此处为Web-Worker API的URL' . $random_str;
       break;
-
     case 'randomImgGYMXBL':
       return 'https://api.gymxbl.com/images/' . $random_str;
       break;
-
     case 'randomImgAPI':
       return $settingObjectStorage . $random_str;
-
     default:
       return 'https://api.gymxbl.com/images/' . $random_str;
       break;
@@ -113,52 +105,42 @@ function getQQNumber($email) {
 
 function getQQNickname($email) {
   $qqInfoPrefix = 'https://r.qzone.qq.com/fcg-bin/cgi_get_portrait.fcg?uins=';
-  $data = getQQNumber($email) ? json_decode(iconv('GB18030', 'UTF-8', str_replace('portraitCallBack(','',rtrim(file_get_contents($qqInfoPrefix.getQQNumber($email)),')'))))->{getQQNumber($email)}['6'] : NULL;
-  
-  return $data;
+  return getQQNumber($email) ? json_decode(iconv('GB18030', 'UTF-8', str_replace('portraitCallBack(','',rtrim(file_get_contents($qqInfoPrefix.getQQNumber($email)),')'))))->{getQQNumber($email)}['6'] : NULL;
 }
-/* 这段代码基于Cuckoo二开, 感谢布好！ */
-function getCommentAvatar($email) {
-  $qqAvatarDomainPrefix = 'https://thirdqq.qlogo.cn/headimg_dl?bs=qq&spec=640&dst_uin=';
+
+function getQQAvatar($email) {
+  return 'https://thirdqq.qlogo.cn/headimg_dl?bs=qq&spec=640&dst_uin='.getQQNumber($email);
+}
+
+function getGravatar($email) {
+  /** 定义默认Gravatar头像源（如果没有被覆盖，则默认使用此源） */
   $gravatarDomainPrefix = 'https://sdn.geekzu.org/avatar/';
   switch (Helper::options()->gravatarUrl) {
     case 'gravatarUrlWebWorker':
       $gravatarDomainPrefix = '此处为Web-Worker API的URL';
       break;
-
     case 'gravatarUrlGeekzu':
       $gravatarDomainPrefix = 'https://sdn.geekzu.org/avatar/';
       break;
-
     case 'gravatarUrlGYMXBL':
       $gravatarDomainPrefix = 'https://i.ilolita.cn/avatar/';
       break;
-
     case 'gravatarUrlTypechoConfigFile':
       $gravatarDomainPrefix = defined('__TYPECHO_GRAVATAR_PREFIX__') ? __TYPECHO_GRAVATAR_PREFIX__ : $gravatarDomainPrefix;
       break;
-
     case 'gravatarUrlAPI':
       $gravatarDomainPrefix = Helper::options()->gravatarAPI;
       break;
-
     default:
       $gravatarDomainPrefix = $gravatarDomainPrefix;
       break;
   }
+  return $gravatarDomainPrefix.strtolower(md5($email).'?d=mm');
+}
 
-  $defaultAvatar = $gravatarDomainPrefix . strtolower(md5($email) . '?d=mm');
-  $priorityQQAvatar = getQQNumber($email) ? 'data:image/png;base64,'.base64_encode(file_get_contents($qqAvatarDomainPrefix.getQQNumber($email))) : $defaultAvatar; // 在泄露QQ号的bug修复之前不打算开放此功能
-
-  switch (Helper::options()->commentAvatar) {
-    case 'priorityUseQQAvatar':
-      return $priorityQQAvatar;
-      break;
-
-    default:
-      return $defaultAvatar;
-      break;
-  }
+/* 这段代码基于Cuckoo二开, 感谢布好！ */
+function getCommentAvatar($email) {
+  return Helper::options()->commentAvatar&&getQQNumber($email) ? 'data:'.get_headers(getQQAvatar($email),true)['Content-Type'].';base64,'.base64_encode(file_get_contents(getQQAvatar($email))) : getGravatar($email);
 }
 
 require_once("template/setting.php");

@@ -51,7 +51,7 @@ function themeConfig($form) {
     'gravatarUrlWebWorker' => 'Web-Worker Gravatar 加速服务 (开发中)',
     'gravatarUrlGeekzu' => '极客族 Gravatar 加速服务',
     'gravatarUrlGYMXBL' => '孤影墨香 Gravatar 加速服务',
-    'gravatarUrlTypechoConfigFile' => 'Typecho配置文件的 "__TYPECHO_GRAVATAR_PREFIX__"',
+    'gravatarUrlTypechoConfigFile' => '跟随Typecho自定义配置 “__TYPECHO_GRAVATAR_PREFIX__”',
     'gravatarUrlAPI' => '其他Gravatar 加速服务(可能存在安全隐患)'
     ), 'gravatarUrlGeekzu', _t('Gravatar 镜像加速服务'), _t('推荐选择【Web-Worker API】<br/>推荐选择一个稳定的头像服务器，例如【极客族】<br/>如果选择【其他API】，请先保存后再编辑！'));
   $form->addInput($gravatarUrl->multiMode());
