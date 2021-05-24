@@ -410,3 +410,15 @@ footer a:hover {
 .mdui-card-actions {
   padding: 16px;
 }
+
+/**
+ ** 文末版权信息
+ **/
+.postCopyright {
+  white-space: normal;
+  word-break: break-all;
+}
+
+.postCopyright a {
+  display: inline;
+}
