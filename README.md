@@ -41,40 +41,16 @@
   
   当前阶段：初版开发
 
-### 开发代办
-  - 初版 页首 ✓
-  - 初版 页脚 ✓
-  - 初版 首页 ✓
-  - 初版 文章页面 ✓
-  - 初版 独立页面 ✓
-  - 初版 友链页面 ✓
-  - 优化 页首 顶栏背景色 doing
-  - 优化 首页 卡片内小信息 doing
-  - 优化 代码 doing
-  - 开发 评论列表 doing
-  - 重写 独立页面 doing
-  - 重写 文章页 doing
-  - 重写 侧边栏 to do
-  - 重写 搜索页 to do
-  - 初版 后台设置页 to do
-  - 初版 函数组 to do
-  - 初版 归档页 to do
-
-### Bug 修复
-  - 当前暂未有人提交Bug
-
-### 建议修改
-  - [small_xu038][9]：卡片内标题改成白色或者图片和文章信息分开
-  - [small_xu038][10]：时间仅保留底部的
+### 项目进度
+  - [TODO][9]
 
 
   [1]: https://web-worker.cn
-  [2]: https://www.ilolita.cn/
+  [2]: https://www.ilolita.cn
   [3]: mailto:Star_caorui@qq.com
   [4]: https://github.com/Star-caorui/Better
-  [5]: https://www.mdui.org/
+  [5]: https://www.mdui.org
   [6]: https://github.com/zdhxiong
   [7]: https://www.gymxbl.com/3080.html
-  [8]: https://www.gymxbl.com/
-  [9]: https://www.gymxbl.com/
-  [10]: https://www.gymxbl.com/
+  [8]: https://www.gymxbl.com
+  [9]: https://github.com/Star-caorui/Better/projects/1
