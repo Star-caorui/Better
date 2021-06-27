@@ -27,23 +27,22 @@
   - Github：[Better][4]
 
 ### 帮助我
-  请通过我的联系方式帮助Better变得更好！
+  由于我想完全控制这套主题的代码风格，所以您的帮助我可能不会全部接受。
 
 ### 特别感谢
   由衷感谢以下项目及这些项目的开发者。
-  - 前端库：[MDUI][5] By [zdhxiong][6]
-  - 代码高亮：[HighLight][7]
-  - 部分页脚代码：[materiality-typecho-theme][8] By [EAimTY][9]
-  - 分页器代码：By [ohmyga][10]
-  - 版权所属信息：[Cuckoo][11] By [Bhao][12]
+  - [MDUI][5] By [zdhxiong][6]
 
 ### 移植相关
-  - [Better For Wordpress][13] (By [small_xu038][14])
+  - [Better For Wordpress][7] (By [small_xu038][8])
 
 ### 开发进度
   进度树：立项->**初版开发**->增量功能更新->维护阶段
-
+  
   当前阶段：初版开发
+
+### 项目进度
+  - [TODO][9]
 
 
   [1]: https://web-worker.cn
@@ -52,11 +51,6 @@
   [4]: https://github.com/Star-caorui/Better
   [5]: https://www.mdui.org
   [6]: https://github.com/zdhxiong
-  [7]: https://highlightjs.org
-  [8]: https://github.com/EAimTY/materiality-typecho-theme
-  [9]: https://www.eaimty.com
-  [10]: https://ohmyga.cn
-  [11]: https://github.com/Bhaoo/Cuckoo
-  [12]: https://dwd.moe
-  [13]: https://www.gymxbl.com/3080.html
-  [14]: https://www.gymxbl.com
+  [7]: https://www.gymxbl.com/3080.html
+  [8]: https://www.gymxbl.com
+  [9]: https://github.com/Star-caorui/Better/projects/1
