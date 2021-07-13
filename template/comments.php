@@ -16,7 +16,7 @@ function threadedComments($comments, $options) {
                 <div class="mdui-card-header">
                   <img class="mdui-card-header-avatar" src="<?php echo getCommentAvatar($comments->mail); ?>" loading="lazy">
                   <div class="mdui-card-header-title mdui-typo"><?php echo (getQQNickname($comments->mail)&&$comments->author!==getQQNickname($comments->mail)) ? $comments->author().' (QQ昵称:'.getQQNickname($comments->mail).')' : $comments->author(); ?></div>
-                  <div class="mdui-card-header-subtitle">[设备型号] [系统版本] [浏览器版本]</div>
+                  <div class="mdui-card-header-subtitle"><?php UserAgent_Plugin::render($this->agent); ?></div>
                 </div>
                 <div class="mdui-card-content mdui-typo"><?php $comments->content(); ?></div>
                 <div class="mdui-card-actions">
