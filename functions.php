@@ -1,47 +1,29 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
-require_once("template/setting.php");
+\Widget\Themes\Rows::alloc()->to($themes);
+\Utils\Helper::options()->to($options);
 
-define("AUTHOR_NAME", "Star-caorui");
-define("THEME_NAME", "Better");
-define("THEME_BRANCH", "alpha");
-define("THEME_VERSION", "0.0.1.t".time());
-define("MDUI_VERSION", "1.0.1");
-define("HIGHLIGHT_VERSION", "10.6.0");
+define('__THEME_NAME__', $themes->name);
+define('__THEME_AUTHOR__', $themes->author);
+define('__THEME_VERSION__', explode('-', $themes->version)['1']);
+define('__THEME_BRANCH__', explode('-', $themes->version)['0']);
+define('__THEME_HOMEPAGE__', $themes->homepage);
+define('__THEME_DESCRIPTION__', $themes->description);
 
-function defaultStaticFiles($str) {
-  $setting = Helper::options()->staticFiles;
-  $settingObjectStorage = Helper::options()->staticFilesObjectStorageUrl;
-  switch ($setting) {
-    case 'staticFilesLocalhost':
-      return Helper::options()->themeUrl . '/src/' . $str;
-      break;  
-    case 'staticFilesGithub':
-      return 'https://raw.githubusercontent.com/' . AUTHOR_NAME . '/' . THEME_NAME . '/' . THEME_BRANCH . '/src/' . $str;
-      break;
-    case 'staticFilesJsdelivr':
-      return 'https://cdn.jsdelivr.net/gh/' . AUTHOR_NAME . '/' . THEME_NAME . '@' . THEME_BRANCH . '/src/' . $str;
-      break;
-    case 'staticFilesObjectStorage':
-      return $settingObjectStorage.$str;
-  }
-}
+define('__GITLAB_URL__', 'https://gitlab.com/');
+define('__GITLAB_AUTHOR_NAME__', 'Star_caorui');
+define('__GITLAB_AUTHOR_URL__', __GITLAB_URL__ . __GITLAB_AUTHOR_NAME__);
+define('__GITLAB_REPO__', __GITLAB_AUTHOR_URL__ . '/' . __THEME_NAME__);
 
-function randomImg() {
-  $setting = Helper::options()->randomImg;
-  $settingObjectStorage = Helper::options()->randomImgAPIUrl;
-  switch ($setting) {
-    case 'randomImgLocalhost':
-      return '此处为源站的URL';
-      break;  
-    case 'randomImgWebWorker':
-      return '此处为Web-Worker API的URL';
-      break;
-    case 'randomImgGYMXBL':
-      return 'https://api.gymxbl.com/images/';
-      break;
-    case 'randomImgAPI':
-      return $settingObjectStorage;
-  }
-}
+define('__GITHUB_URL__', 'https://github.com/');
+define('__GITHUB_AUTHOR_NAME__', 'Star-caorui');
+define('__GITHUB_AUTHOR_URL__', __GITHUB_URL__ . __GITHUB_AUTHOR_NAME__);
+define('__GITHUB_REPO__', __GITHUB_AUTHOR_URL__ . '/' . __THEME_NAME__);
+
+require_once('module/version.php');
+require_once('module/toolkit.php');
+require_once('module/themeHelper.php');
+require_once('module/api.php');
+require_once('module/themeConfig.php');
+require_once('module/themeFields.php');

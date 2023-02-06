@@ -7,6 +7,7 @@
   margin-left: auto;
   margin-right: auto;
 }
+
 /* Baidu Cache Page */
 #bd_snap{
   margin-top: 64px;
@@ -37,9 +38,40 @@ body, html {
 /**
  ** 底边留白
  */
-.better-save-white {
+.better-blank {
   margin-top: 32px;
   margin-bottom: 32px;
+}
+
+/**
+ ** 卡片标题 下划线隐藏
+ */
+.mdui-card-primary-title a {
+  text-decoration: none !important;
+}
+
+/**
+ ** 卡片副标题 下划线隐藏
+ */
+.mdui-card-primary-subtitle a {
+  text-decoration: none !important;
+}
+
+/**
+ ** 评论取消功能 下划线隐藏
+ */
+.cancel-comment-reply a {
+  text-decoration: none !important;
+}
+
+
+/**
+ ** 文章底部信息样式（代码来源：https://github.com/bhaoo/Cuckoo/ 感谢Bhao大佬！）
+ */
+.article-copy {
+  padding: 10px;
+  border-bottom: 1px dashed #797979;
+  border-top: 1px dashed #797979;
 }
 
 /**
@@ -192,6 +224,10 @@ body, html {
   width: 100%;
 }
 
+.page-img img {
+  max-height: 350px;
+}
+
 .postCard-img {
   height: 210px;
 }
@@ -216,20 +252,8 @@ body, html {
   top: -33px
 }
 
-.postTitle {
-  display: none;
-  padding-bottom: 0px !important;
-}
-
-.postTitle a {
-  height: 72px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 .postContent {
   padding-top: 16px !important;
-  height: 54px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -280,16 +304,14 @@ body, html {
     height: 100%;
   }
 
-  .postTitle-Small {
-    display: none;
-  }
-
-  .postTitle {
-    display: block;
-  }
-
   .postTitle-and-postContent {
-    height: 198px;
+    height: 190px;
+  }
+
+  .postContent {
+    top: 48px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
@@ -341,7 +363,8 @@ footer a:hover {
   .footer-left {
     height: inherit;
     padding: 0 8px;
-    white-space: nowrap text-align:left;
+    text-align:left;
+    white-space: nowrap
   }
 
   .footer-center {
@@ -389,4 +412,28 @@ footer a:hover {
     font-size: 12.5px;
     line-height: 20px
   }
+}
+
+/**
+ ** 评论
+ **/
+.comment-list {
+  margin: 0;
+  padding-left: 0;
+}
+
+.mdui-card-actions {
+  padding: 16px;
+}
+
+/**
+ ** 文末版权信息
+ **/
+.postCopyright {
+  white-space: normal;
+  word-break: break-all;
+}
+
+.postCopyright a {
+  display: inline;
 }

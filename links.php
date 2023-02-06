@@ -1,6 +1,6 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
- * Links
+ * 「友链」页面
  *
  * @author Stsr_caorui
  * @for Star-caorui/Better
@@ -9,17 +9,14 @@
  */
 
 $this->need('template/header.php'); ?>
-<div class="post">
-  <div class="better-save-white"></div>
+  <div class="better-blank"></div>
   <div class="mdui-card mdui-hoverable postCard">
     <div class="mdui-card-media">
       <div class="page-img">
-        <img src="<?php print_r(randomImg().'?'); echo rand(0,10000); ?>">
+        <img src="<?php _e(toolkit::randomImg()); ?>"/>
       </div>
       <div class="mdui-card-menu">
-        <button class="mdui-btn mdui-btn-icon mdui-text-color-white">
-          <i class="mdui-icon material-icons">share</i>
-        </button>
+        <?php _e(genBtnTag(genIconTag('share'), 'mdui-btn-icon mdui-text-color-white')); ?>
       </div>
       <div class="mdui-card-media-covered">
         <div class="mdui-card-primary">
@@ -27,9 +24,8 @@ $this->need('template/header.php'); ?>
         </div>
       </div>
     </div>
-    <div class="article-page mdui-typo"><?php $this->content(); ?><?php $this->links("SHOW_MIX"); ?></div>
+    <div class="article-page mdui-typo"><?php $this->content(); $this->links("SHOW_MIX"); ?></div>
   </div>
-  <div class="better-save-white"></div>
+  <div class="better-blank"></div>
   <?php $this->need('template/comments.php'); ?>
-</div>
 <?php $this->need('template/footer.php'); ?>

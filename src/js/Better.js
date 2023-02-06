@@ -1,4 +1,4 @@
-/* 主题施工中 */
+/* 主题施工中
 mdui.snackbar({
     message: '欢迎访问本站！',
     position: 'right-top',
@@ -9,15 +9,12 @@ mdui.snackbar({
     message: '本站近期主题正在施工，请不要到处乱点哦！',
     position: 'right-top',
     timeout:'3000'
-});
-
-/* Enable HighLight */
-hljs.initHighlightingOnLoad();
+}); */
 
 /* Site RunTime */
 function show_runtime(){
     window.setTimeout("show_runtime()",1000);
-    Birthday=new Date("4/11/2020 00:00:00");
+    Birthday=new Date(document.getElementById("RunTime").getAttribute("birthday"));
     Nowday=new Date();
     LiveTime=(Nowday.getTime()-Birthday.getTime());
     M=24*60*60*1000;

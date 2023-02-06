@@ -1,0 +1,6 @@
+# 自定义文件忽略
+module/custom.php
+src/css/custom.css
+src/js/custom.js
+src/img/random
+.vscode
