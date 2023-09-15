@@ -11,19 +11,24 @@ define('__THEME_BRANCH__', explode('-', $themes->version)['0']);
 define('__THEME_HOMEPAGE__', $themes->homepage);
 define('__THEME_DESCRIPTION__', $themes->description);
 
-define('__GITLAB_URL__', 'https://gitlab.com/');
-define('__GITLAB_AUTHOR_NAME__', 'Star_caorui');
-define('__GITLAB_AUTHOR_URL__', __GITLAB_URL__ . __GITLAB_AUTHOR_NAME__);
-define('__GITLAB_REPO__', __GITLAB_AUTHOR_URL__ . '/' . __THEME_NAME__);
-
 define('__GITHUB_URL__', 'https://github.com/');
 define('__GITHUB_AUTHOR_NAME__', 'Star-caorui');
 define('__GITHUB_AUTHOR_URL__', __GITHUB_URL__ . __GITHUB_AUTHOR_NAME__);
 define('__GITHUB_REPO__', __GITHUB_AUTHOR_URL__ . '/' . __THEME_NAME__);
 
+define('__GITLAB_URL__', 'https://gitlab.com/');
+define('__GITLAB_AUTHOR_NAME__', 'Star_caorui');
+define('__GITLAB_AUTHOR_URL__', __GITLAB_URL__ . __GITLAB_AUTHOR_NAME__);
+define('__GITLAB_REPO__', __GITLAB_AUTHOR_URL__ . '/' . __THEME_NAME__);
+
 require_once('module/version.php');
 require_once('module/toolkit.php');
 require_once('module/themeHelper.php');
-require_once('module/api.php');
+require_once('module/themeAPI.php');
 require_once('module/themeConfig.php');
 require_once('module/themeFields.php');
+
+if (isset($_GET['sw_js'])) {
+  header('Content-Type: text/javascript');
+  exit(require_once('src/js/sw.js'));
+}

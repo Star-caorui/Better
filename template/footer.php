@@ -13,10 +13,14 @@
   </div>
   <div class="footer-center mdui-col-xs-6 mdui-valign">
     <div class="mdui-center">
+      <div class="mdui-text-center">
+        Copyright &copy; <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a>
+      </div>
+      <br />
       <div id="RunTime" class="mdui-text-center" birthday="<?php if (!empty($this->options->siteBirthday)) print_r($this->options->siteBirthday); ?>"></div>
       <br />
       <div class="mdui-text-center">
-        Copyright &copy; <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a>
+        Powered by <a href="http://typecho.org/" target="_blank" rel="nofollow">Typecho</a> | Theme <a href="https://blog.inetech.fun/Project/Better.html" target="_blank" rel="nofollow">Better</a> By <a href="https://blog.inetech.fun" target="_blank">Star_caorui</a><br />
       </div>
     </div>
   </div>
@@ -25,31 +29,26 @@
       <div>
         <?php
         $codeAlignment = '         ';
-        if (!empty($this->options->footerInfoRight)) :
-          if (in_array('showICPBeian', $this->options->footerInfoRight)) :
+        if (in_array('showMoeBeian', $this->options->footerInfoRight)) {
+          if (isset($this->options->moeBeian)) {
+            print_r($codeAlignment . '<a href="https://icp.gov.moe" target="_blank" rel="nofollow"><img src="' . toolkit::staticFiles('img/moeICP.png') . '" alt="“萌ICP备”的Logo" style="vertical-align: middle;" width="20" height="20" loading="lazy">萌ICP备</a>' . PHP_EOL);
+            print_r($codeAlignment . '<a href="https://icp.gov.moe/?keyword=' . $this->options->moeBeian . '" target="_blank" rel="nofollow">' . $this->options->moeBeian . '号</a>' . '<br/>' . PHP_EOL);
+          }
+        }
+        if (!empty($this->options->footerInfoRight)) {
+          if (in_array('showICPBeian', $this->options->footerInfoRight)) {
             if (isset($this->options->icpBeian)) {
               print_r('<a href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow">' . $this->options->icpBeian . '</a>' . '<br/>' . PHP_EOL);
             }
-          endif;
-          if (in_array('showBeian', $this->options->footerInfoRight)) :
+          }
+          if (in_array('showBeian', $this->options->footerInfoRight)) {
             if (isset($this->options->beian)) {
-              print_r($codeAlignment . '<a href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=' . $this->options->beian . '" target="_blank" rel="nofollow"><img src="https://blog.inetech.fun/usr/themes/Better/src/img/National Emblem of the People\'s Republic of China.png" alt="中华人民共和国国徽" style="vertical-align: middle;" width="20" height="20">蒙公网安备 ' . $this->options->beian . '</a><br/>' . PHP_EOL);
+              print_r($codeAlignment . '
+              <a href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=' . $this->options->beian . '" target="_blank" rel="nofollow"><img src="https://blog.inetech.fun/usr/themes/Better/src/img/National Emblem of the People\'s Republic of China.png" alt="中华人民共和国国徽" style="vertical-align: middle;" width="20" height="20">' . $this->options->beian . '</a><br/>' . PHP_EOL);
             }
-          endif;
-          if (in_array('showMoeBeian', $this->options->footerInfoRight)) :
-            if (isset($this->options->moeBeian)) {
-              print_r($codeAlignment . '<a href="https://icp.gov.moe" target="_blank" rel="nofollow"><img src="' . toolkit::staticFiles('img/moeICP.png') . '" alt="“萌ICP备”的Logo" style="vertical-align: middle;" width="20" height="20" loading="lazy">萌ICP备</a>' . PHP_EOL);
-              print_r($codeAlignment . '<a href="https://icp.gov.moe/?keyword=' . $this->options->moeBeian . '" target="_blank" rel="nofollow">' . $this->options->moeBeian . '号</a>' . '<br/>' . PHP_EOL);
-            }
-          endif;
-        endif;
+          }
+        }
         ?>
-      </div>
-      <div>
-        Powered by <a href="http://typecho.org/" target="_blank" rel="nofollow">Typecho</a>
-      </div>
-      <div>
-        Theme <a href="https://blog.inetech.fun/Project/Better.html" target="_blank" rel="nofollow">Better</a> By <a href="https://blog.inetech.fun" target="_blank">Star_caorui</a><br />
       </div>
     </div>
   </div>
@@ -78,7 +77,7 @@
 <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
-      navigator.serviceWorker.register(`<?php $this->options->themeUrl(); ?>src/js/sw.js?time=${new Date().getTime()}`, {
+      navigator.serviceWorker.register('/?sw.js', {
           scope: '/'
         })
         .then(async reg => {
