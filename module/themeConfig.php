@@ -61,7 +61,12 @@ class themeConfig {
   }
 }
 
-
+/**
+ * 主题设置表单
+ *
+ * @param mixed $form 表单处理帮手
+ * @return void 直接输出主题设置表单
+ */
 function themeConfig($form) {
   \Utils\Helper::options()->to($options);
 
@@ -154,7 +159,7 @@ function themeConfig($form) {
     $form->addInput($key);
   }
   if (!empty($options->footerInfoRight) && in_array('showBeian', $options->footerInfoRight)) {
-    $key = new Typecho\Widget\Helper\Form\Element\Text('beian', NULL, NULL, _t('公网安备案'), _t('示例格式：XXXXXXXXXXXXXX号'));
+    $key = new Typecho\Widget\Helper\Form\Element\Text('beian', NULL, NULL, _t('公网安备案'), _t('示例格式：公网安备 XXXXXXXXXXXXXX号'));
     $form->addInput($key);
   }
   if (!empty($options->footerInfoRight) && in_array('showMoeBeian', $options->footerInfoRight)) {
