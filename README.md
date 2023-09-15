@@ -37,9 +37,6 @@
 
   当前阶段：初版开发
 
-### 项目进度
-  - [TODO][8]
-
 [1]: https://blog.inetech.fun
 [2]: https://www.ilolita.cn
 [3]: mailto:i@inetech.com
@@ -47,4 +44,3 @@
 [5]: https://github.com/zdhxiong
 [6]: https://www.gymxbl.com/3080.html
 [7]: https://www.gymxbl.com
-[8]: https://dida365.com/pub/project/collaboration/invite/e7ce07716f2149758295406debc88082?u=d6a4637c85774a25b9a7dc9a2ccaa8e8
